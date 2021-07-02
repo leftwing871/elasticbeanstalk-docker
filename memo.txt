@@ -1,0 +1,215 @@
+(base) ➜  eatgo mv eatgo-api-0.0.1-SNAPSHOT.jar eatgo.jar
+(base) ➜  eatgo java -jar eatgo.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v2.1.13.RELEASE)
+
+2021-07-02 17:12:36.701  INFO 85181 --- [           main] kr.co.fastcampus.eatgo.EatgoApplication  : Starting EatgoApplication on MZC02-EHLEE-2.local with PID 85181 (/Users/mzc02-ehlee/beanstalk/eatgo/eatgo.jar started by mzc02-ehlee in /Users/mzc02-ehlee/beanstalk/eatgo)
+2021-07-02 17:12:36.705  INFO 85181 --- [           main] kr.co.fastcampus.eatgo.EatgoApplication  : No active profile set, falling back to default profiles: default
+2021-07-02 17:12:37.444  INFO 85181 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-02 17:12:37.471  INFO 85181 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 MongoDB repository interfaces.
+2021-07-02 17:12:38.249  INFO 85181 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-02 17:12:38.295  INFO 85181 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-02 17:12:38.295  INFO 85181 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-07-02 17:12:38.431  INFO 85181 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-02 17:12:38.431  INFO 85181 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1676 ms
+2021-07-02 17:12:38.791  INFO 85181 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-02 17:12:39.235  WARN 85181 --- [           main] org.mongodb.driver.uri                   : Unsupported option 'ssl_ca_certs' in the connection string 'mongodb://test:testtest@docdb.cluster-c0oiyabh53s1.ap-northeast-2.docdb.amazonaws.com:27017/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false'.
+2021-07-02 17:12:39.278  INFO 85181 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[docdb.cluster-c0oiyabh53s1.ap-northeast-2.docdb.amazonaws.com:27017], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='rs0'}
+2021-07-02 17:12:39.278  INFO 85181 --- [           main] org.mongodb.driver.cluster               : Adding discovered server docdb.cluster-c0oiyabh53s1.ap-northeast-2.docdb.amazonaws.com:27017 to client view of cluster
+2021-07-02 17:12:39.357  INFO 85181 --- [onaws.com:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server docdb.cluster-c0oiyabh53s1.ap-northeast-2.docdb.amazonaws.com:27017
+
+com.mongodb.MongoSocketException: docdb.cluster-c0oiyabh53s1.ap-northeast-2.docdb.amazonaws.com: nodename nor servname provided, or not known
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:188) ~[mongo-java-driver-3.8.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongo-java-driver-3.8.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62) ~[mongo-java-driver-3.8.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126) ~[mongo-java-driver-3.8.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongo-java-driver-3.8.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.UnknownHostException: docdb.cluster-c0oiyabh53s1.ap-northeast-2.docdb.amazonaws.com: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298) ~[na:na]
+	at java.base/java.net.InetAddress.getByName(InetAddress.java:1248) ~[na:na]
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:186) ~[mongo-java-driver-3.8.2.jar!/:na]
+	... 5 common frames omitted
+
+2021-07-02 17:12:39.435  WARN 85181 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-02 17:12:39.435  WARN 85181 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-02 17:12:39.486  WARN 85181 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class java.time.Instant as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-02 17:12:39.486  WARN 85181 --- [           main] o.s.data.convert.CustomConversions       : Registering converter from class java.time.Instant to class java.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-02 17:12:39.702  INFO 85181 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-02 17:12:39.708  INFO 85181 --- [           main] kr.co.fastcampus.eatgo.EatgoApplication  : Started EatgoApplication in 3.756 seconds (JVM running for 4.235)
+2021-07-02 17:12:50.966  INFO 85181 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-02 17:12:50.966  INFO 85181 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-02 17:12:50.975  INFO 85181 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+System.out.println 2021-07-02T17:12:51.010841+09:00[Asia/Seoul]-- +9
+System.out.println 2021-07-02T17:12:53.345187+09:00[Asia/Seoul]-- +9
+System.out.println 2021-07-02T17:12:53.696103+09:00[Asia/Seoul]-- +9
+System.out.println 2021-07-02T17:12:53.925186+09:00[Asia/Seoul]-- +9
+System.out.println 2021-07-02T17:12:54.111510+09:00[Asia/Seoul]-- +9
+System.out.println 2021-07-02T17:12:54.305219+09:00[Asia/Seoul]-- +9
+System.out.println 2021-07-02T17:12:54.491660+09:00[Asia/Seoul]-- +9
+System.out.println 2021-07-02T17:12:54.678088+09:00[Asia/Seoul]-- +9
+System.out.println 2021-07-02T17:12:54.863798+09:00[Asia/Seoul]-- +9
+System.out.println 2021-07-02T17:12:55.008406+09:00[Asia/Seoul]-- +9
+^C2021-07-02 17:12:56.702  INFO 85181 --- [       Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+(base) ➜  eatgo
+(base) ➜  eatgo
+(base) ➜  eatgo
+(base) ➜  eatgo
+(base) ➜  eatgo code .
+(base) ➜  eatgo ll
+total 42768
+-rw-r--r--  1 mzc02-ehlee  staff   123B  7  2 17:13 Dockerfile
+-rw-r--r--  1 mzc02-ehlee  staff    21M  7  2 17:12 eatgo.jar
+(base) ➜  eatgo ls -al
+total 42768
+drwxr-xr-x  4 mzc02-ehlee  staff       128  7  2 17:12 .
+drwxr-xr-x  6 mzc02-ehlee  staff       192  7  2 16:33 ..
+-rw-r--r--  1 mzc02-ehlee  staff       123  7  2 17:13 Dockerfile
+-rw-r--r--  1 mzc02-ehlee  staff  21891041  7  2 17:12 eatgo.jar
+(base) ➜  eatgo pwd
+/Users/mzc02-ehlee/beanstalk/eatgo
+(base) ➜  eatgo eb --version
+EB CLI 3.19.4 (Python 3.9.5)
+(base) ➜  eatgo eb init
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) cn-northwest-1 : China (Ningxia)
+14) us-east-2 : US East (Ohio)
+15) ca-central-1 : Canada (Central)
+16) eu-west-2 : EU (London)
+17) eu-west-3 : EU (Paris)
+18) eu-north-1 : EU (Stockholm)
+19) eu-south-1 : EU (Milano)
+20) ap-east-1 : Asia Pacific (Hong Kong)
+21) me-south-1 : Middle East (Bahrain)
+22) af-south-1 : Africa (Cape Town)
+(default is 3): 10
+
+
+Enter Application Name
+(default is "eatgo"):
+Application eatgo has been created.
+
+It appears you are using Docker. Is this correct?
+(Y/n): Y
+Select a platform branch.
+1) Docker running on 64bit Amazon Linux 2
+2) Multi-container Docker running on 64bit Amazon Linux
+3) Docker running on 64bit Amazon Linux
+(default is 1): 1
+
+Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization
+Do you want to set up SSH for your instances?
+(Y/n): Y
+
+Select a keypair.
+1) 961770019511_seoul
+2) dslim-game-work
+3) kakaogames-datalake-keypair
+4) mzc-test-public
+5) [ Create new KeyPair ]
+(default is 4): 1
+
+(base) ➜  eatgo eb create
+Enter Environment Name
+(default is eatgo-dev):
+Enter DNS CNAME prefix
+(default is eatgo-dev):
+
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 2): 2
+
+
+Would you like to enable Spot Fleet requests for this environment? (y/N): y
+Enter a list of one or more valid EC2 instance types separated by commas (at least two instance types are recommended).
+(Defaults provided on Enter):
+
+Creating application version archive "app-210702_172047".
+Uploading: [##################################################] 100% Done...
+Environment details for: eatgo-dev
+  Application name: eatgo
+  Region: ap-northeast-2
+  Deployed Version: app-210702_172047
+  Environment ID: e-3jmzixz9yq
+  Platform: arn:aws:elasticbeanstalk:ap-northeast-2::platform/Docker running on 64bit Amazon Linux 2/3.4.1
+  Tier: WebServer-Standard-1.0
+  CNAME: eatgo-dev.ap-northeast-2.elasticbeanstalk.com
+  Updated: 2021-07-02 08:20:53.178000+00:00
+Printing Status:
+2021-07-02 08:20:51    INFO    createEnvironment is starting.
+2021-07-02 08:20:53    INFO    Using elasticbeanstalk-ap-northeast-2-961770019511 as Amazon S3 storage bucket for environment data.
+2021-07-02 08:21:19    INFO    Created target group named: arn:aws:elasticloadbalancing:ap-northeast-2:961770019511:targetgroup/awseb-AWSEB-18ZYAXNDGLYF3/d83443ced170c7db
+2021-07-02 08:21:19    INFO    Created security group named: sg-087adcfa3adccb70c
+2021-07-02 08:21:35    INFO    Created security group named: awseb-e-3jmzixz9yq-stack-AWSEBSecurityGroup-1CYUHLO0EMCD9
+2021-07-02 08:22:36    INFO    Created Auto Scaling group named: awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingGroup-7L0MBPM09ESG
+2021-07-02 08:22:37    INFO    Waiting for EC2 instances to launch. This may take a few minutes.
+2021-07-02 08:22:37    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:ap-northeast-2:961770019511:scalingPolicy:177af90a-0f9c-4aed-a90c-9f09bdb3f2ea:autoScalingGroupName/awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingGroup-7L0MBPM09ESG:policyName/awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingScaleDownPolicy-MQAPCM9BMB9
+2021-07-02 08:22:37    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:ap-northeast-2:961770019511:scalingPolicy:0f252974-cc8a-4047-b7ab-8a00216bc248:autoScalingGroupName/awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingGroup-7L0MBPM09ESG:policyName/awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingScaleUpPolicy-Q4ERL7XBB0FS
+2021-07-02 08:22:37    INFO    Created CloudWatch alarm named: awseb-e-3jmzixz9yq-stack-AWSEBCloudwatchAlarmLow-103ARBZ3XKU88
+2021-07-02 08:22:37    INFO    Created CloudWatch alarm named: awseb-e-3jmzixz9yq-stack-AWSEBCloudwatchAlarmHigh-171S87TYJRF0F
+2021-07-02 08:22:52    INFO    Created load balancer named: arn:aws:elasticloadbalancing:ap-northeast-2:961770019511:loadbalancer/app/awseb-AWSEB-1WNQ9QTER1SVF/51041c8455195852
+2021-07-02 08:22:56    INFO    Created Load Balancer listener named: arn:aws:elasticloadbalancing:ap-northeast-2:961770019511:listener/app/awseb-AWSEB-1WNQ9QTER1SVF/51041c8455195852/a30cbc3721c07f0e
+2021-07-02 08:23:35    INFO    Instance deployment completed successfully.
+2021-07-02 08:24:37    INFO    Application available at eatgo-dev.ap-northeast-2.elasticbeanstalk.com.
+2021-07-02 08:24:38    INFO    Successfully launched environment: eatgo-dev
+
+Alert: An update to the EB CLI is available. Run "pip install --upgrade awsebcli" to get the latest version.
+(base) ➜
+
+
+(base) ➜  eatgo eb deploy
+Creating application version archive "app-210702_173700".
+Uploading: [##################################################] 100% Done...
+2021-07-02 08:37:02    INFO    Environment update is starting.
+2021-07-02 08:37:06    INFO    Deploying new version to instance(s).
+2021-07-02 08:37:25    INFO    Instance deployment completed successfully.
+2021-07-02 08:37:33    INFO    New application version was deployed to running EC2 instances.
+2021-07-02 08:37:33    INFO    Environment update completed successfully.
+
+Alert: An update to the EB CLI is available. Run "pip install --upgrade awsebcli" to get the latest version.
+
+(base) ➜  eatgo eb terminate --force
+2021-07-02 08:48:15    INFO    terminateEnvironment is starting.
+2021-07-02 08:48:33    INFO    Deleted CloudWatch alarm named: awseb-e-3jmzixz9yq-stack-AWSEBCloudwatchAlarmHigh-171S87TYJRF0F
+2021-07-02 08:48:33    INFO    Deleted CloudWatch alarm named: awseb-e-3jmzixz9yq-stack-AWSEBCloudwatchAlarmLow-103ARBZ3XKU88
+2021-07-02 08:48:33    INFO    Deleted Load Balancer listener named: arn:aws:elasticloadbalancing:ap-northeast-2:961770019511:listener/app/awseb-AWSEB-1WNQ9QTER1SVF/51041c8455195852/a30cbc3721c07f0e
+2021-07-02 08:48:33    INFO    Deleted Auto Scaling group policy named: arn:aws:autoscaling:ap-northeast-2:961770019511:scalingPolicy:0f252974-cc8a-4047-b7ab-8a00216bc248:autoScalingGroupName/awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingGroup-7L0MBPM09ESG:policyName/awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingScaleUpPolicy-Q4ERL7XBB0FS
+2021-07-02 08:48:33    INFO    Deleted Auto Scaling group policy named: arn:aws:autoscaling:ap-northeast-2:961770019511:scalingPolicy:177af90a-0f9c-4aed-a90c-9f09bdb3f2ea:autoScalingGroupName/awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingGroup-7L0MBPM09ESG:policyName/awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingScaleDownPolicy-MQAPCM9BMB9
+2021-07-02 08:48:33    INFO    Deleted load balancer named: arn:aws:elasticloadbalancing:ap-northeast-2:961770019511:loadbalancer/app/awseb-AWSEB-1WNQ9QTER1SVF/51041c8455195852
+2021-07-02 08:48:33    INFO    Waiting for EC2 instances to terminate. This may take a few minutes.
+2021-07-02 08:50:35    INFO    Deleted Auto Scaling group named: awseb-e-3jmzixz9yq-stack-AWSEBAutoScalingGroup-7L0MBPM09ESG
+2021-07-02 08:50:35    INFO    Deleted target group named: arn:aws:elasticloadbalancing:ap-northeast-2:961770019511:targetgroup/awseb-AWSEB-18ZYAXNDGLYF3/d83443ced170c7db
+2021-07-02 08:50:35    INFO    Deleted security group named: awseb-e-3jmzixz9yq-stack-AWSEBSecurityGroup-1CYUHLO0EMCD9
+2021-07-02 08:50:35    INFO    Deleted security group named: sg-087adcfa3adccb70c
+2021-07-02 08:50:55    INFO    Deleting SNS topic for environment eatgo-dev.
+2021-07-02 08:50:57    INFO    terminateEnvironment completed successfully.
+
+(base) ➜  eatgo
+
